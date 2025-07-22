@@ -4,17 +4,19 @@ import Header from './components/header/Header';
 import Home from './pages/home/Home';
 import Movie from './pages/Moviedetail/Moviedetail';
 import MovieList from './components/movielist/Movielist';
+import LoginSignup from './components/login/login';  // Single import
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        
+       
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="movie/:id" element={<Movie />} />
-          <Route path="movies/:type" element={<MovieList />} />
-          <Route path="*" element={<h1>Error Page</h1>} />
+          <Route path="" element={<LoginSignup />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/movie/:id" element={<Movie />} />
+          <Route path="/movies/:type" element={<MovieList />} />
         </Routes>
       </Router>
     </div>

@@ -4,6 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import MovieList from "../../components/movielist/Movielist";
+import Header from "../../components/header/Header";
+
 
 const Home = () => {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -17,7 +19,9 @@ const Home = () => {
   }, []);
 
   return (
+   
     <div className="poster">
+      <Header/>
       <Carousel
         showThumbs={false}
         autoPlay
