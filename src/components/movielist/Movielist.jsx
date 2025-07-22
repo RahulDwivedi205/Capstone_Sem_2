@@ -57,4 +57,3 @@ const MovieList = () => {
 
 export default MovieList;
 
-hi
