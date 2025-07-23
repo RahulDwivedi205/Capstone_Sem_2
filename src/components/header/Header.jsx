@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({setToken}) => {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
@@ -11,6 +11,10 @@ const Header = () => {
       navigate(`/search/${searchQuery.trim()}`);
       setSearchQuery(""); 
     }
+  };
+  const handleLogout = () => {
+    setToken('')
+    navigate("/")
   };
 
   return (
@@ -34,6 +38,7 @@ const Header = () => {
           onKeyDown={(e) => e.key === "Enter" && handleSearch()} 
         />
         <button onClick={handleSearch} className="searchButton">Search</button>
+        <button onClick={handleLogout} className="searchButton">Logout</button>
       </div>
     </header>
   );

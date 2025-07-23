@@ -7,9 +7,9 @@ import MovieList from "../../components/movielist/Movielist";
 import Header from "../../components/header/Header";
 
 
-const Home = () => {
+const Home = ({token, setToken}) => {
   const [popularMovies, setPopularMovies] = useState([]);
-
+  console.log("ye hai token", token)
   useEffect(() => {
     fetch(
     "https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US"
@@ -17,11 +17,12 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setPopularMovies(data.results));
   }, []);
+  console.log(popularMovies)
 
-  return (
+  if (token){return (
    
     <div className="poster">
-      <Header/>
+      <Header setToken = {setToken}/>
       <Carousel
         showThumbs={false}
         autoPlay
@@ -62,7 +63,13 @@ const Home = () => {
 
       <MovieList />
     </div>
-  );
+  )}
+  else{
+    return (
+      <h1>Please login first</h1>
+    )
+  }
+  
 };
 
 export default Home;
