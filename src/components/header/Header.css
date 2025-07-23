@@ -1,43 +1,56 @@
+
 .header {
     margin: 0 2.5rem;
-    padding: .5rem 0;
-    align-items: center;
+    padding: 0.8rem 0;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
 }
 
 .headerLeft, .headerRight {
     display: flex;
     align-items: center;
-    gap: 40px;
-
-}
-
-a > span{
-    margin: 0 30px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    color: white;
-}
-
-a > span:hover {
-    color: red;
+    gap: 30px;
 }
 
 .header__icon {
     width: 50px;
-    cursor: pointer;
     border-radius: 50%;
+    cursor: pointer;
 }
 
-.user__avatar {
-    font-size: 2rem;
+.header__link {
+    font-size: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.headerRight{
-  gap: 20px;
-  color: white;
+.header__link:hover {
+    color: #ff0000;
 }
-button{
-    color: rgb(255, 0, 0);
+
+
+.searchInput {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.searchButton {
+    padding: 8px 12px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.searchButton:hover {
+    background-color: #cc0000;
 }

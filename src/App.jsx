@@ -4,7 +4,7 @@ import Header from './components/header/Header';
 import Home from './pages/home/Home';
 import Movie from './pages/Moviedetail/Moviedetail';
 import MovieList from './components/movielist/Movielist';
-import LoginSignup from './components/login/login';  // Single import
+import LoginSignup from './components/login/login';
 
 function App() {
   return (

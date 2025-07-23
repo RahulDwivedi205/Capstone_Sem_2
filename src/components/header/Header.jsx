@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = () => {
-    if (searchQuery) {
-      window.location.href = `/search/${searchQuery}`;
+    if (searchQuery.trim()) {
+      navigate(`/search/${searchQuery.trim()}`);
+      setSearchQuery(""); 
     }
   };
 
@@ -29,6 +31,7 @@ const Header = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="searchInput"
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()} 
         />
         <button onClick={handleSearch} className="searchButton">Search</button>
       </div>
